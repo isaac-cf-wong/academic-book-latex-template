@@ -1,0 +1,62 @@
+\documentclass[12pt,a4paper,twoside]{report}
+\input{format/style}
+
+\booktitle{An academic book}
+\authorname{Author}
+\submitdate{\today}
+
+% Page layout
+\usepackage[a4paper,margin=1.2in]{geometry}
+
+% Font and language
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype} % Better spacing
+\usepackage{hyperref} % Clickable links
+
+% Math packages
+\usepackage{amsmath,amssymb,amsthm}
+
+% Graphics and figures
+\usepackage{graphicx}
+
+% Bibliography
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+% Index and Glossary
+\usepackage{imakeidx} % For the index
+\makeindex
+\usepackage[toc,acronym]{glossaries} % Glossary
+\makeglossaries
+
+% Define Theorem environments
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+
+\begin{document}
+
+\coverpage
+
+%=======================================================
+\pagenumbering{roman}
+\abstractpage
+%=======================================================
+\acknowledgementpage
+%=======================================================
+\tableofcontents
+\listoffigures
+\listoftables
+\include{sections/symbols-and-acronyms}
+%=======================================================
+
+\newpage
+\setcounter{page}{0}
+\pagenumbering{arabic}
+\pagestyle{headings}
+%=======================================================
+%insert the chapters
+\part{Topic}
+\include{sections/introduction/introduction}
+
+\end{document}
