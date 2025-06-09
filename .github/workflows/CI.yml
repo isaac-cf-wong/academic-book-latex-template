@@ -22,7 +22,7 @@ jobs:
           check_hidden: true
           ignore_words_list: "te,nd"
           ignore_words_file: ".ignore_words.txt"
-          path: "*.tex **/*.tex **/**/*.tex"
+          path: "main.tex sections"
 
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
